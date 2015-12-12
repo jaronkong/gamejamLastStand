@@ -95,8 +95,8 @@ with ( enemy ) {
         shakeScreen( 16 );
         life -= 0.5;
         stun = max( stun, 0.1 );
-        knock -= ( 48 * sign( other.image_xscale ) );
-        heightSpeed = 8;
+        knock -= ( 32 * sign( other.image_xscale ) );
+        heightSpeed = max( 8, heightSpeed );
     }
 }
 </string>

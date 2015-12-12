@@ -119,6 +119,7 @@ with ( enemy ) {
         life -= 0.6;
         stun = max( stun, 0.25 );
         knock += ( 8 * sign( other.image_xscale ) );
+        heightSpeed = max( 4, heightSpeed );
     }
 }
 </string>

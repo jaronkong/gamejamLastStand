@@ -143,6 +143,22 @@ aniTime = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>331</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_restart_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -298,7 +314,7 @@ if ( cooldown &lt; 0 ) {
         with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= tAttack;
         playerSetSprite( player_range_spr, tAttack, 0.3 );
         movement += ( 16 * tAttack );
-        cooldown = 0.4;
+        cooldown = 0.3;
     }
 }
 </string>
@@ -335,9 +351,9 @@ if ( cooldown &lt; 0 ) {
     
     if ( tAttack != 0 ) {
         with ( instance_create( x, y, playerAttackSuperDown ) ) image_xscale *= tAttack;
-        playerSetSprite( player_dashstop_spr, tAttack, 0.5 );
+        playerSetSprite( player_dashstop_spr, tAttack, 0.4 );
         movement += ( 8 * tAttack );
-        cooldown = 0.6;
+        cooldown = 0.4;
     }
 }
 </string>
@@ -376,7 +392,7 @@ if ( cooldown &lt; 0 ) {
         with ( instance_create( x, y, playerAttackSuperUp ) ) image_xscale *= tAttack;
         playerSetSprite( player_range_spr, tAttack, 0.4 );
         movement += ( 8 * tAttack );
-        cooldown = 0.5;
+        cooldown = 0.4;
     }
 }
 </string>
