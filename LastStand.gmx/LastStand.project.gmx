@@ -78,6 +78,7 @@
     <object>objects\playerAttackClose</object>
     <object>objects\playerAttackRanged</object>
     <object>objects\playerAttackSuperDown</object>
+    <object>objects\playerAttackSuperUp</object>
     <object>objects\enemy</object>
     <objects name="StandaloneEffects">
       <object>objects\sparkPop</object>
