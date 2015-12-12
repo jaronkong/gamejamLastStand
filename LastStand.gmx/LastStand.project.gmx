@@ -124,8 +124,10 @@
       <object>objects\refractionParticleDrawer</object>
     </objects>
     <object>objects\enemyDebris</object>
+    <object>objects\titleController</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\Title_rm</room>
     <room>rooms\Main_rm</room>
   </rooms>
   <constants number="2">
