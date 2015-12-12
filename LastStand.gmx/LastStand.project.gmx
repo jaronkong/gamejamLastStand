@@ -61,6 +61,10 @@
     <shader type="GLSLES">shaders\finalScreen_sdr.shader</shader>
     <shader type="GLSLES">shaders\refraction_sdr.shader</shader>
   </shaders>
+    <scripts name="Player">
+      <script>scripts\playerSetSprite.gml</script>
+    </scripts>
+  </scripts>
   <objects name="objects">
     <object>objects\controller</object>
     <object>objects\player</object>

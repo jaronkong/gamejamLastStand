@@ -57,7 +57,7 @@ kRangedRight = ord( 'U' );
             <kind>1</kind>
             <string>///Set scaling
 
-var tScale = 0.5;
+var tScale = 0.25;
 image_xscale = tScale;
 image_yscale = tScale;
 </string>
@@ -83,6 +83,32 @@ image_yscale = tScale;
             <string>///Movement state
 
 movement = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Animation state
+
+aniDirection = 1;
+
+//Time until return to idle
+aniTime = 0;
 </string>
           </argument>
         </arguments>
@@ -135,13 +161,15 @@ x -= tDiff;
 var tMove = 0;
 
 if ( keyboard_check_pressed( kMoveLeft ) ) {
+    playerSetSprite( player_dash_spr, -1, 0.15 );
     tMove -= 1;
 }
 if ( keyboard_check_pressed( kMoveRight ) ) {
+    playerSetSprite( player_dash_spr, 1, 0.15 );
     tMove += 1;
 }
 
-movement += ( 64 * tMove );
+movement += ( 96 * tMove );
 </string>
           </argument>
         </arguments>
@@ -168,10 +196,12 @@ var tMove = 0;
 
 if ( keyboard_check_pressed( kAttackLeft ) ) {
     with ( instance_create( x, y, playerAttack ) ) image_xscale *= -1;
+    playerSetSprite( player_attack_spr, -1, 0.2 );
     tMove -= 1;
 }
 if ( keyboard_check_pressed( kAttackRight ) ) {
     with ( instance_create( x, y, playerAttack ) ) image_xscale *= 1;
+    playerSetSprite( player_attack_spr, 1, 0.2 );
     tMove += 1;
 }
 
@@ -202,14 +232,56 @@ var tMove = 0;
 
 if ( keyboard_check_pressed( kRangedLeft ) ) {
     with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= -1;
+    playerSetSprite( player_attack_spr, -1, 0.3 );
     tMove -= 1;
 }
 if ( keyboard_check_pressed( kRangedRight ) ) {
     with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= 1;
+    playerSetSprite( player_attack_spr, 1, 0.3 );
     tMove += 1;
 }
 
 movement += ( 16 * tMove );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Update animations
+
+if ( aniTime &gt;= 0 ) {
+    aniTime -= 1/room_speed;
+    if ( aniTime &lt; 0 ) {
+        if ( sprite_index == player_dash_spr ) {
+            sprite_index = player_dashstop_spr;
+            aniTime = 0.1;
+        } else {
+            sprite_index = player_idle_spr;
+        }
+    }
+}
+
+image_speed = 0;
+if ( sprite_index == player_idle_spr ) {
+    image_speed = 0.03;
+}
+
+image_xscale = ( abs( image_xscale ) * aniDirection );
 </string>
           </argument>
         </arguments>
