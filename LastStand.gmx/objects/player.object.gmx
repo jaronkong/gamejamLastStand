@@ -181,6 +181,7 @@ aniTime = 0;
 var tDiff = ( lerp( movement, 0, 0.125 ) - movement );
 movement += tDiff;
 x -= tDiff;
+y = controller.floorHeight;
 </string>
           </argument>
         </arguments>
