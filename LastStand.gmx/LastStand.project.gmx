@@ -54,6 +54,7 @@
     <object>objects\controller</object>
     <object>objects\player</object>
     <object>objects\playerAttack</object>
+    <object>objects\playerAttackRanged</object>
     <object>objects\enemy</object>
     <objects name="Effects">
       <object>objects\effectsGlobalCon</object>
