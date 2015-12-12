@@ -16,6 +16,7 @@
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\attack_spr</sprite>
     <sprite>sprites\enemy_spr</sprite>
+    <sprite>sprites\enemyDebris_spr</sprite>
     <sprite>sprites\alert_spr</sprite>
     <sprites name="Enemy">
       <sprite>sprites\enemy_move_spr</sprite>
@@ -120,6 +121,7 @@
       <object>objects\refractionNormalPar</object>
       <object>objects\refractionParticleDrawer</object>
     </objects>
+    <object>objects\enemyDebris</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Main_rm</room>
