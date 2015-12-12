@@ -94,8 +94,9 @@ with ( enemy ) {
     if ( place_meeting( x, y, other.id ) ) {
         shakeScreen( 16 );
         life -= 0.5;
-        stun = max( stun, 0.6 );
-        knock += ( 8 * sign( other.image_xscale ) );
+        stun = max( stun, 0.1 );
+        knock -= ( 48 * sign( other.image_xscale ) );
+        heightSpeed = 8;
     }
 }
 </string>
