@@ -142,6 +142,9 @@ heightSpeed -= ( 25 / room_speed );
 height += heightSpeed;
 
 if ( height &lt; 0 ) {
+    if ( heightSpeed &lt; -5 ) {
+        shakeScreen( 6 );
+    }
     height = 0;
     heightSpeed = 0;
 }
