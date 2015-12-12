@@ -92,7 +92,7 @@ shakeScreen( 2 );
             <string>///Stun enemies that will take damage
 
 with ( enemy ) {
-    if ( place_meeting( x, y, other.id ) ) {
+    if ( place_meeting( x, y - height, other.id ) ) {
         stun = max( stun, 1/room_speed );
     }
 }

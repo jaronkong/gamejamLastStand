@@ -91,7 +91,7 @@ alarm[0] = 6;
             <string>///Test for damage
 
 with ( enemy ) {
-    if ( place_meeting( x, y, other.id ) ) {
+    if ( place_meeting( x, y - height, other.id ) ) {
         shakeScreen( 8 );
         if ( abs( x - other.x ) &lt; abs( other.sprite_width * 0.75 ) ) {
             life -= 0.05;

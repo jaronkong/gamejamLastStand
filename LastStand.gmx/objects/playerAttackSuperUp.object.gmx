@@ -91,7 +91,7 @@ alarm[0] = 8;
             <string>///Test for damage
 
 with ( enemy ) {
-    if ( place_meeting( x, y, other.id ) ) {
+    if ( place_meeting( x, y - height, other.id ) ) {
         shakeScreen( 16 );
         life -= 0.2;
         stun = max( stun, 0.1 );

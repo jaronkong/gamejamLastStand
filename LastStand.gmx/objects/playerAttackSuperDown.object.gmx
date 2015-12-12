@@ -114,7 +114,7 @@ shakeScreen( 32 );
             <string>///Test for damage
 
 with ( enemy ) {
-    if ( place_meeting( x, y, other.id ) ) {
+    if ( place_meeting( x, y - height, other.id ) ) {
         shakeScreen( 16 );
         life -= 0.8;
         stun = max( stun, 0.25 );
