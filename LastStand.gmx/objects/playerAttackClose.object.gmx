@@ -96,7 +96,17 @@ with ( enemy ) {
         stun = max( stun, 0.05 );
         knock += ( 48 * sign( other.image_xscale ) );
         shakeScreen( 8 );
+        
+        playSound( slash_sd, 0.05 );
+        if ( sign( other.image_xscale ) ) {
+            slashLineCreate( x, y - sprite_height/2, 0 );
+        }
+        else {
+            slashLineCreate( x, y - sprite_height/2, 180 );
+        }
+        
     }
+    
 }
 </string>
           </argument>

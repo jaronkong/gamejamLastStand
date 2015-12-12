@@ -28,18 +28,26 @@
             <string>///Setup
 
 dir = 0;
-dirFan = 5;
+dirSign = 1;
+
+height = 64;
+beamHeight = 16;
+beamFloorOffset = height/2 - beamHeight/2;
+dist = 200;
+
+xOffset = 32;
 
 burstX = x;
 burstY = y;
 
 system1 = part_system_create( );
+plainSystem = part_system_create( );
 
 emitter1 = part_emitter_create( system1 );
 part_emitter_region( system1, emitter1, x, x, y, y, ps_shape_ellipse, ps_distr_gaussian );
 
 bloom_attachParticleSystem( system1, BLOOM_DEPTH );
-//distortionGlow_attachParticleSystem( system1 );
+distortionGlow_attachParticleSystem( system1 );
 refraction_attachParticleSystem( system1 );
 part_system_automatic_draw( system1, true );
 
@@ -70,6 +78,7 @@ part_system_automatic_draw( system1, true );
 
 part_emitter_destroy( system1, emitter1 );
 part_system_destroy( system1 );
+part_system_destroy( plainSystem );
 
 
 </string>
@@ -118,10 +127,39 @@ alarm [ 0 ] = room_speed * 2;
 
 part_emitter_region( system1, emitter1, burstX, burstX, burstY, burstY, ps_shape_ellipse, ps_distr_gaussian );
 
-part_type_direction(getParticle( "slashLine" ),dir, dir,0 ,0 );
-part_emitter_burst( system1, emitter1, getParticle( "slashLine" ), 5 );
-part_type_direction(getParticle( "slashSpark" ),dir - dirFan, dir + dirFan,0 ,0 );
-part_emitter_burst( system1, emitter1, getParticle( "slashSpark" ), 40 );
+var tXRes = 32;
+var tYRes = 4;
+
+part_type_direction(getParticle( "beamCore" ),dir, dir,0 ,0 );
+for ( var i = 0; i &lt; dist; i += tXRes ) {
+    
+    for ( var j = 0; j &lt; beamHeight; j += tYRes ) {
+        part_particles_create( system1, burstX + i*dirSign, burstY - beamFloorOffset - j, getParticle("beamCore"), 1 );
+    }
+    
+}   
+
+//Shroud
+var tShroudHeightExtra = 16;
+var tShroudHeightExtraHalf = tShroudHeightExtra/2;
+part_type_direction(getParticle( "beamShroud" ),dir, dir,0 ,0 );
+for ( var i = 0; i &lt; dist; i += tXRes ) {
+    
+    for ( var j = 0; j &lt; beamHeight + tShroudHeightExtra; j += tYRes ) {
+        part_particles_create( system1, burstX + i*dirSign, burstY - beamFloorOffset + tShroudHeightExtraHalf - j, getParticle("beamShroud"), 1 );
+    }
+    
+} 
+
+//Ground Smoke
+var tSmokeTilt = 90 + 60 ;
+part_type_direction(getParticle( "beamGroundSmoke" ),dir + tSmokeTilt* dirSign, dir + tSmokeTilt* dirSign,0 ,0 );
+for ( var i = 0; i &lt; dist; i += 8 ) {
+    
+        part_particles_create( plainSystem, burstX + i*dirSign, burstY, getParticle("beamGroundSmoke"), 2 );
+    
+} 
+
 
 </string>
           </argument>

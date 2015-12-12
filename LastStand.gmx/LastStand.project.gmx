@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\slash_sd</sound>
+    <sound>sound\beam_sd</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\attack_spr</sprite>
@@ -41,6 +44,7 @@
     <script>scripts\globalInit.gml</script>
     <scripts name="StandaloneEffects">
       <script>scripts\slashLineCreate.gml</script>
+      <script>scripts\beamLineCreate.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\initGlobalPartMap.gml</script>
@@ -85,6 +89,7 @@
     <objects name="StandaloneEffects">
       <object>objects\sparkPop</object>
       <object>objects\swordStreak</object>
+      <object>objects\beamShot</object>
     </objects>
     <objects name="Effects">
       <object>objects\effectsGlobalCon</object>

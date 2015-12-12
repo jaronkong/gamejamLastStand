@@ -293,6 +293,16 @@ if ( cooldown &lt; 0 ) {
         playerSetSprite( player_range_spr, tAttack, 0.3 );
         movement += ( 16 * tAttack );
         cooldown = 0.4;
+        
+        playSound( beam_sd, 0.04 );    
+        //Effects
+        if ( tAttack &gt; 0 ) {
+            beamLineCreate( x, y, 0, tAttack );
+        }
+        else {
+            beamLineCreate( x, y, 180, tAttack );
+        }
+        
     }
 }
 </string>
