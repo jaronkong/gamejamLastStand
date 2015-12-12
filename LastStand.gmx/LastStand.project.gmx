@@ -58,6 +58,7 @@
     <scripts name="Player">
       <script>scripts\playerSetSprite.gml</script>
     </scripts>
+    <script>scripts\shakeScreen.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\bloom_sdr.shader</shader>
@@ -73,6 +74,7 @@
     <object>objects\controller</object>
     <object>objects\player</object>
     <object>objects\playerAttack</object>
+    <object>objects\playerAttackClose</object>
     <object>objects\playerAttackRanged</object>
     <object>objects\enemy</object>
     <objects name="StandaloneEffects">
