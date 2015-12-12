@@ -7,6 +7,7 @@
   <sounds name="sound">
     <sound>sound\slash_sd</sound>
     <sound>sound\beam_sd</sound>
+    <sound>sound\swordSwing_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>

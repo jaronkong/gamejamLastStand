@@ -253,6 +253,9 @@ if ( cooldown &lt; 0 ) {
         playerSetSprite( player_attack_spr, tAttack, 0.15 );
         movement += ( 32 * tAttack );
         cooldown = 0.05;
+        
+        playSound( swordSwing_sd, 0.04 );
+        
     }
 }
 
