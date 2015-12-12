@@ -14,6 +14,7 @@
       <sprite>sprites\player_dash_spr</sprite>
       <sprite>sprites\player_dashstop_spr</sprite>
       <sprite>sprites\player_attack_spr</sprite>
+      <sprite>sprites\player_range_spr</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\particle_explosion_spr</sprite>
