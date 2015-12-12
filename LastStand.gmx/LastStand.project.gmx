@@ -9,6 +9,10 @@
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\attack_spr</sprite>
     <sprite>sprites\enemy_spr</sprite>
+    <sprites name="Enemy">
+      <sprite>sprites\enemy_move_spr</sprite>
+      <sprite>sprites\enemy_hit_spr</sprite>
+    </sprites>
     <sprites name="Player">
       <sprite>sprites\player_idle_spr</sprite>
       <sprite>sprites\player_dash_spr</sprite>
