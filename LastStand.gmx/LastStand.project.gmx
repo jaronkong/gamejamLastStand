@@ -39,8 +39,13 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\globalInit.gml</script>
+    <scripts name="StandaloneEffects">
+      <script>scripts\slashLineCreate.gml</script>
+    </scripts>
     <scripts name="Particles">
+      <script>scripts\initGlobalPartMap.gml</script>
       <script>scripts\particleDef_main.gml</script>
+      <script>scripts\particleDef_attacks.gml</script>
       <script>scripts\getParticle.gml</script>
     </scripts>
     <scripts name="Effects">
@@ -53,7 +58,6 @@
       <script>scripts\effects_getShaderSurface.gml</script>
       <script>scripts\effects_globalSurfaceExists.gml</script>
       <script>scripts\effects_surfaceInit.gml</script>
-      <script>scripts\initGlobalPartMap.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\playerSetSprite.gml</script>
@@ -80,6 +84,7 @@
     <object>objects\enemy</object>
     <objects name="StandaloneEffects">
       <object>objects\sparkPop</object>
+      <object>objects\swordStreak</object>
     </objects>
     <objects name="Effects">
       <object>objects\effectsGlobalCon</object>

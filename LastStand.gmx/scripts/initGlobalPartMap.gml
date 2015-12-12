@@ -26,4 +26,5 @@ global.particleEmitterMap = ds_map_create();
 
 
 particleDef_main();
+particleDef_attacks();
 
