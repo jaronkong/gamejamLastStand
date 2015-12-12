@@ -13,6 +13,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\controller</object>
     <object>objects\player</object>
     <object>objects\playerAttack</object>
     <object>objects\enemy</object>
