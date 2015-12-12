@@ -21,6 +21,7 @@
     <sprites name="Enemy">
       <sprite>sprites\enemy_move_spr</sprite>
       <sprite>sprites\enemy_hit_spr</sprite>
+      <sprite>sprites\sprite25</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\player_idle_spr</sprite>
@@ -101,6 +102,7 @@
     <objects name="StandaloneEffects">
       <object>objects\sparkPop</object>
       <object>objects\swordStreak</object>
+      <object>objects\beamHitPop</object>
       <object>objects\beamShot</object>
       <object>objects\superSlam</object>
       <object>objects\superSlamSmoke</object>

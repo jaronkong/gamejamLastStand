@@ -69,6 +69,23 @@ part_type_direction(tPartType,0,359,0 ,0 );
 part_type_orientation(tPartType,0,0,0 ,0 ,1);
 part_type_life(tPartType,20 ,60 );
 
+tPartName = "beamHit"
+if not ( ds_map_exists( global.particleMap, tPartName ) ) {
+    tPartType = part_type_create();
+    ds_map_add( global.particleMap, tPartName, tPartType );
+}
+tPartType = getParticle( tPartName );
+part_type_blend(tPartType,1);
+part_type_sprite(tPartType, particle_line_spr, 0, 0, 0 );
+part_type_size(tPartType,0.2,0.3,-0.004 ,0 );
+part_type_scale(tPartType,1,1);
+part_type_color3(tPartType,make_color_rgb( 50, 50, 255 ),make_color_rgb( 50, 100, 255 ), make_color_rgb( 50, 50, 255 ));
+part_type_alpha2(tPartType,1,0);
+part_type_speed(tPartType,1 ,15 ,0 ,0.5 );
+part_type_direction(tPartType,0,359,0 ,0 );
+part_type_orientation(tPartType,0,0,0 ,0 ,1);
+part_type_life(tPartType,5 ,30 );
+
 tPartName = "beamGroundSmoke"
 if not ( ds_map_exists( global.particleMap, tPartName ) ) {
     tPartType = part_type_create();
