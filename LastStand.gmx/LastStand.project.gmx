@@ -8,6 +8,9 @@
     <sound>sound\slash_sd</sound>
     <sound>sound\beam_sd</sound>
     <sound>sound\swordSwing_sd</sound>
+    <sound>sound\superSlam_sd</sound>
+    <sound>sound\superSlamCatch_sd</sound>
+    <sound>sound\uppercut_sd</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
@@ -46,6 +49,8 @@
     <scripts name="StandaloneEffects">
       <script>scripts\slashLineCreate.gml</script>
       <script>scripts\beamLineCreate.gml</script>
+      <script>scripts\superDownCreate.gml</script>
+      <script>scripts\superUpCreate.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\initGlobalPartMap.gml</script>
@@ -93,6 +98,8 @@
       <object>objects\sparkPop</object>
       <object>objects\swordStreak</object>
       <object>objects\beamShot</object>
+      <object>objects\superSlam</object>
+      <object>objects\uppercut</object>
     </objects>
     <objects name="Effects">
       <object>objects\effectsGlobalCon</object>

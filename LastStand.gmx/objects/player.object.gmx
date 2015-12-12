@@ -62,10 +62,10 @@ kRangedLeft = ord( 'R' );
 kRangedRight = ord( 'U' );
 
 kSuperDownLeft = ord( '3' );
-kSuperDownRight = ord( '8' );
+kSuperDownRight = ord( '9' );
 
 kSuperUpLeft = ord( '4' );
-kSuperUpRight = ord( '7' );
+kSuperUpRight = ord( '8' );
 </string>
           </argument>
         </arguments>
@@ -351,6 +351,8 @@ if ( cooldown &lt; 0 ) {
         playerSetSprite( player_dashstop_spr, tAttack, 0.5 );
         movement += ( 8 * tAttack );
         cooldown = 0.6;
+        
+        playSound( superSlamCatch_sd, 0.05 );
     }
 }
 </string>
