@@ -239,23 +239,23 @@ movement += ( 96 * tMove );
             <string>///Attack input
 
 if ( cooldown &lt; 0 ) {
-    var tMove = 0;
+    var tAttack = 0;
     
     if ( keyboard_check_pressed( kAttackLeft ) ) {
-        with ( instance_create( x, y, playerAttack ) ) image_xscale *= -1;
-        playerSetSprite( player_attack_spr, -1, 0.15 );
-        cooldown = 0.05;
-        tMove -= 1;
+        tAttack -= 1;
     }
     if ( keyboard_check_pressed( kAttackRight ) ) {
-        with ( instance_create( x, y, playerAttack ) ) image_xscale *= 1;
-        playerSetSprite( player_attack_spr, 1, 0.15 );
-        cooldown = 0.05;
-        tMove += 1;
+        tAttack += 1;
     }
     
-    movement += ( 32 * tMove );
+    if ( tAttack != 0 ) {
+        with ( instance_create( x, y, playerAttack ) ) image_xscale *= tAttack;
+        playerSetSprite( player_attack_spr, tAttack, 0.15 );
+        movement += ( 32 * tAttack );
+        cooldown = 0.05;
+    }
 }
+
 </string>
           </argument>
         </arguments>
@@ -279,22 +279,21 @@ if ( cooldown &lt; 0 ) {
             <string>///Ranged attack input
 
 if ( cooldown &lt; 0 ) {
-    var tMove = 0;
+    var tAttack = 0;
     
     if ( keyboard_check_pressed( kRangedLeft ) ) {
-        with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= -1;
-        playerSetSprite( player_attack_spr, -1, 0.3 );
-        cooldown = 0.4;
-        tMove -= 1;
+        tAttack -= 1;
     }
     if ( keyboard_check_pressed( kRangedRight ) ) {
-        with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= 1;
-        playerSetSprite( player_attack_spr, 1, 0.3 );
-        cooldown = 0.4;
-        tMove += 1;
+        tAttack += 1;
     }
     
-    movement += ( 16 * tMove );
+    if ( tAttack != 0 ) {
+        with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= tAttack;
+        playerSetSprite( player_attack_spr, tAttack, 0.3 );
+        movement += ( 16 * tAttack );
+        cooldown = 0.4;
+    }
 }
 </string>
           </argument>
