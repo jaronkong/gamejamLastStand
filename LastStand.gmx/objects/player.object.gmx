@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Set scaling
 
-var tScale = 0.25;
+var tScale = 0.35;
 image_xscale = tScale;
 image_yscale = tScale;
 </string>
