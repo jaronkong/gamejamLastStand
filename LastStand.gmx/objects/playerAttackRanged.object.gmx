@@ -92,6 +92,7 @@ alarm[0] = 6;
 
 with ( enemy ) {
     if ( place_meeting( x, y, other.id ) ) {
+        shakeScreen( 8 );
         if ( abs( x - other.x ) &lt; abs( other.sprite_width * 0.75 ) ) {
             life -= 0.1;
             stun = max( stun, 0.02 );
