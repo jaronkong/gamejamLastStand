@@ -137,7 +137,7 @@ if ( keyboard_check_pressed( kMoveRight ) ) {
     tMove += 1;
 }
 
-movement += ( 128 * tMove );
+movement += ( 64 * tMove );
 </string>
           </argument>
         </arguments>
@@ -171,7 +171,7 @@ if ( keyboard_check_pressed( kAttackRight ) ) {
     tMove += 1;
 }
 
-movement += ( 32 * tMove );
+movement += ( 16 * tMove );
 </string>
           </argument>
         </arguments>
