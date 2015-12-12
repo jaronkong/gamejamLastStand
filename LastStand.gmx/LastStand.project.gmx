@@ -4,7 +4,14 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\slash_sd</sound>
+    <sound>sound\beam_sd</sound>
+    <sound>sound\swordSwing_sd</sound>
+    <sound>sound\superSlam_sd</sound>
+    <sound>sound\superSlamCatch_sd</sound>
+    <sound>sound\uppercut_sd</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
     <sprite>sprites\attack_spr</sprite>
@@ -21,6 +28,7 @@
       <sprite>sprites\player_dashstop_spr</sprite>
       <sprite>sprites\player_attack_spr</sprite>
       <sprite>sprites\player_range_spr</sprite>
+      <sprite>sprites\player_slam_spr</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\particle_explosion_spr</sprite>
@@ -43,8 +51,17 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\globalInit.gml</script>
+    <scripts name="StandaloneEffects">
+      <script>scripts\slashLineCreate.gml</script>
+      <script>scripts\beamLineCreate.gml</script>
+      <script>scripts\superDownCreate.gml</script>
+      <script>scripts\superSlamSmokeCreate.gml</script>
+      <script>scripts\superUpCreate.gml</script>
+    </scripts>
     <scripts name="Particles">
+      <script>scripts\initGlobalPartMap.gml</script>
       <script>scripts\particleDef_main.gml</script>
+      <script>scripts\particleDef_attacks.gml</script>
       <script>scripts\getParticle.gml</script>
     </scripts>
     <scripts name="Effects">
@@ -57,7 +74,6 @@
       <script>scripts\effects_getShaderSurface.gml</script>
       <script>scripts\effects_globalSurfaceExists.gml</script>
       <script>scripts\effects_surfaceInit.gml</script>
-      <script>scripts\initGlobalPartMap.gml</script>
     </scripts>
     <scripts name="Player">
       <script>scripts\playerSetSprite.gml</script>
@@ -86,6 +102,11 @@
     <object>objects\enemy</object>
     <objects name="StandaloneEffects">
       <object>objects\sparkPop</object>
+      <object>objects\swordStreak</object>
+      <object>objects\beamShot</object>
+      <object>objects\superSlam</object>
+      <object>objects\superSlamSmoke</object>
+      <object>objects\uppercut</object>
     </objects>
     <objects name="Effects">
       <object>objects\effectsGlobalCon</object>

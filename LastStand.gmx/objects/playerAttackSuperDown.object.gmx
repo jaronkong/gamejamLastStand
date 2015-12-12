@@ -2,7 +2,7 @@
 <object>
   <spriteName>attack_spr</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>playerAttack</parentName>
@@ -65,7 +65,7 @@ image_yscale = 0.25;
             <kind>1</kind>
             <string>///Set timer
 
-alarm[0] = 16;
+alarm[0] = room_speed * 0.63;
 </string>
           </argument>
         </arguments>
@@ -116,12 +116,43 @@ shakeScreen( 32 );
 with ( enemy ) {
     if ( place_meeting( x, y, other.id ) ) {
         shakeScreen( 16 );
-        life -= 0.6;
+        life -= 0.8;
         stun = max( stun, 0.25 );
         knock += ( 8 * sign( other.image_xscale ) );
-        heightSpeed = max( 4, heightSpeed );
+        heightSpeed = max( 6, heightSpeed );
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Effects
+
+playSound( superSlam_sd, 0.05 );
+
+if ( image_xscale &gt; 0 ) {
+    superDownCreate( x, y + 8, 0, 1 );
+}
+else {
+    superDownCreate( x, y + 8, 180, -1 );
+}
+
 </string>
           </argument>
         </arguments>

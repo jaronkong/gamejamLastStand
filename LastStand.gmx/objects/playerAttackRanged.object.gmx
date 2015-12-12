@@ -2,7 +2,7 @@
 <object>
   <spriteName>attack_spr</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>playerAttack</parentName>
@@ -94,11 +94,11 @@ with ( enemy ) {
     if ( place_meeting( x, y, other.id ) ) {
         shakeScreen( 8 );
         if ( abs( x - other.x ) &lt; abs( other.sprite_width * 0.75 ) ) {
-            life -= 0.1;
+            life -= 0.05;
             stun = max( stun, 0.02 );
             knock += ( ( 256 - abs( x - other.x ) ) * sign( other.image_xscale ) );
         } else {
-            life -= 0.5;
+            life -= 0.3;
             stun = max( stun, 0.1 );
             knock += ( 32 * sign( other.image_xscale ) );
         }
