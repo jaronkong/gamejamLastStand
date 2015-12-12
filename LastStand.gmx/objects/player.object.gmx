@@ -236,7 +236,7 @@ movement += ( 96 * tMove );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Attack input
+            <string>///Near attack input
 
 if ( cooldown &lt; 0 ) {
     var tAttack = 0;
@@ -249,7 +249,7 @@ if ( cooldown &lt; 0 ) {
     }
     
     if ( tAttack != 0 ) {
-        with ( instance_create( x, y, playerAttack ) ) image_xscale *= tAttack;
+        with ( instance_create( x, y, playerAttackClose ) ) image_xscale *= tAttack;
         playerSetSprite( player_attack_spr, tAttack, 0.15 );
         movement += ( 32 * tAttack );
         cooldown = 0.05;
