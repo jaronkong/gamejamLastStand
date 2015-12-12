@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Set scaling
 
-var tScale = 0.25;
+var tScale = 0.35;
 image_xscale = tScale;
 image_yscale = tScale;
 </string>
@@ -236,7 +236,7 @@ movement += ( 96 * tMove );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Near attack input
+            <string>///Near attack
 
 if ( cooldown &lt; 0 ) {
     var tAttack = 0;
@@ -276,7 +276,7 @@ if ( cooldown &lt; 0 ) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Ranged attack input
+            <string>///Ranged attack
 
 if ( cooldown &lt; 0 ) {
     var tAttack = 0;
@@ -290,7 +290,7 @@ if ( cooldown &lt; 0 ) {
     
     if ( tAttack != 0 ) {
         with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= tAttack;
-        playerSetSprite( player_attack_spr, tAttack, 0.3 );
+        playerSetSprite( player_range_spr, tAttack, 0.3 );
         movement += ( 16 * tAttack );
         cooldown = 0.4;
     }

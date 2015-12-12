@@ -96,7 +96,7 @@ with ( enemy ) {
         if ( abs( x - other.x ) &lt; abs( other.sprite_width * 0.75 ) ) {
             life -= 0.1;
             stun = max( stun, 0.02 );
-            knock += ( 192 * sign( other.image_xscale ) );
+            knock += ( ( 256 - abs( x - other.x ) ) * sign( other.image_xscale ) );
         } else {
             life -= 0.5;
             stun = max( stun, 0.1 );
