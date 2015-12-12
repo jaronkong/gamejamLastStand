@@ -25,6 +25,31 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Set scaling
+
+var tScale = 0.25;
+image_xscale = tScale;
+image_yscale = tScale;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Define input keys
 
 kMoveLeft = ord( 'V' );
@@ -55,11 +80,9 @@ kRangedRight = ord( 'U' );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set scaling
+            <string>///Movement state
 
-var tScale = 0.25;
-image_xscale = tScale;
-image_yscale = tScale;
+movement = 0;
 </string>
           </argument>
         </arguments>
@@ -80,9 +103,9 @@ image_yscale = tScale;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement state
+            <string>///Attack state
 
-movement = 0;
+cooldown = 0;
 </string>
           </argument>
         </arguments>
@@ -156,6 +179,29 @@ x -= tDiff;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Update attack cooldown
+
+cooldown -= ( 1 / room_speed );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Juke input
 
 var tMove = 0;
@@ -192,20 +238,24 @@ movement += ( 96 * tMove );
             <kind>1</kind>
             <string>///Attack input
 
-var tMove = 0;
-
-if ( keyboard_check_pressed( kAttackLeft ) ) {
-    with ( instance_create( x, y, playerAttack ) ) image_xscale *= -1;
-    playerSetSprite( player_attack_spr, -1, 0.2 );
-    tMove -= 1;
+if ( cooldown &lt; 0 ) {
+    var tAttack = 0;
+    
+    if ( keyboard_check_pressed( kAttackLeft ) ) {
+        tAttack -= 1;
+    }
+    if ( keyboard_check_pressed( kAttackRight ) ) {
+        tAttack += 1;
+    }
+    
+    if ( tAttack != 0 ) {
+        with ( instance_create( x, y, playerAttack ) ) image_xscale *= tAttack;
+        playerSetSprite( player_attack_spr, tAttack, 0.15 );
+        movement += ( 32 * tAttack );
+        cooldown = 0.05;
+    }
 }
-if ( keyboard_check_pressed( kAttackRight ) ) {
-    with ( instance_create( x, y, playerAttack ) ) image_xscale *= 1;
-    playerSetSprite( player_attack_spr, 1, 0.2 );
-    tMove += 1;
-}
 
-movement += ( 32 * tMove );
 </string>
           </argument>
         </arguments>
@@ -228,20 +278,23 @@ movement += ( 32 * tMove );
             <kind>1</kind>
             <string>///Ranged attack input
 
-var tMove = 0;
-
-if ( keyboard_check_pressed( kRangedLeft ) ) {
-    with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= -1;
-    playerSetSprite( player_attack_spr, -1, 0.3 );
-    tMove -= 1;
+if ( cooldown &lt; 0 ) {
+    var tAttack = 0;
+    
+    if ( keyboard_check_pressed( kRangedLeft ) ) {
+        tAttack -= 1;
+    }
+    if ( keyboard_check_pressed( kRangedRight ) ) {
+        tAttack += 1;
+    }
+    
+    if ( tAttack != 0 ) {
+        with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= tAttack;
+        playerSetSprite( player_attack_spr, tAttack, 0.3 );
+        movement += ( 16 * tAttack );
+        cooldown = 0.4;
+    }
 }
-if ( keyboard_check_pressed( kRangedRight ) ) {
-    with ( instance_create( x, y, playerAttackRanged ) ) image_xscale *= 1;
-    playerSetSprite( player_attack_spr, 1, 0.3 );
-    tMove += 1;
-}
-
-movement += ( 16 * tMove );
 </string>
           </argument>
         </arguments>
