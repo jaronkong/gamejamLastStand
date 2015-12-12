@@ -18,6 +18,11 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Player">
+      <script>scripts\playerSetSprite.gml</script>
+    </scripts>
+  </scripts>
   <objects name="objects">
     <object>objects\controller</object>
     <object>objects\player</object>

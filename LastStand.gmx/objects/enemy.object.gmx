@@ -112,7 +112,7 @@ if ( abs( knock ) &lt; 1 ) {
 
 if ( instance_exists( player ) &amp;&amp; ( stun &lt; 0 ) ) {
     y = lerp( y, player.y, 0.01 );
-    if ( abs( x - player.x ) &gt; 64 ) {
+    if ( abs( x - player.x ) &gt; 96 ) {
         x += ( 1.5 * sign( player.x - x ) );
     }
 }
