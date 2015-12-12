@@ -27,6 +27,7 @@
       <sprite>sprites\player_dashstop_spr</sprite>
       <sprite>sprites\player_attack_spr</sprite>
       <sprite>sprites\player_range_spr</sprite>
+      <sprite>sprites\player_slam_spr</sprite>
     </sprites>
     <sprites name="Particles">
       <sprite>sprites\particle_explosion_spr</sprite>
@@ -51,6 +52,7 @@
       <script>scripts\slashLineCreate.gml</script>
       <script>scripts\beamLineCreate.gml</script>
       <script>scripts\superDownCreate.gml</script>
+      <script>scripts\superSlamSmokeCreate.gml</script>
       <script>scripts\superUpCreate.gml</script>
     </scripts>
     <scripts name="Particles">
@@ -100,6 +102,7 @@
       <object>objects\swordStreak</object>
       <object>objects\beamShot</object>
       <object>objects\superSlam</object>
+      <object>objects\superSlamSmoke</object>
       <object>objects\uppercut</object>
     </objects>
     <objects name="Effects">

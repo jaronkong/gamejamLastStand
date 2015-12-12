@@ -2,7 +2,7 @@
 <object>
   <spriteName>attack_spr</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>playerAttack</parentName>
@@ -93,7 +93,7 @@ alarm[0] = 8;
 with ( enemy ) {
     if ( place_meeting( x, y, other.id ) ) {
         shakeScreen( 16 );
-        life -= 0.5;
+        life -= 0.2;
         stun = max( stun, 0.1 );
         knock -= ( 32 * sign( other.image_xscale ) );
         heightSpeed = max( 8, heightSpeed );
