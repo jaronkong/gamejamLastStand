@@ -142,7 +142,7 @@ if ( ( stun &lt; 0 ) &amp;&amp; ( height &lt;= 0 ) ){
             <string>///Check for death
 
 if ( life &lt;= 0 ) {
-    repeat ( irandom_range( 5, 15 ) ) {
+    repeat ( irandom_range( 10, 25 ) ) {
         with ( instance_create( random_range( bbox_left, bbox_right ),
                 random_range( bbox_top, bbox_bottom ) - height, enemyDebris ) ) {
             speedX += ( other.knock * 6 );
