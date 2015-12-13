@@ -11,6 +11,8 @@
     <sound>sound\superSlam_sd</sound>
     <sound>sound\superSlamCatch_sd</sound>
     <sound>sound\uppercut_sd</sound>
+    <sound>sound\playerDeath_sd</sound>
+    <sound>sound\shadowsOfNight_bgm</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\player_spr</sprite>
@@ -49,6 +51,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background_bg</background>
+    <background>background\title_bg</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -111,6 +114,7 @@
       <object>objects\sparkPop</object>
       <object>objects\swordStreak</object>
       <object>objects\beamHitPop</object>
+      <object>objects\playerDeath</object>
       <object>objects\beamShot</object>
       <object>objects\superSlam</object>
       <object>objects\superSlamSmoke</object>
