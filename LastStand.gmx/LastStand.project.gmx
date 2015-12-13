@@ -21,7 +21,7 @@
     <sprites name="Enemy">
       <sprite>sprites\enemy_move_spr</sprite>
       <sprite>sprites\enemy_hit_spr</sprite>
-      <sprite>sprites\sprite25</sprite>
+      <sprite>sprites\enemy_jump_spr</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\player_idle_spr</sprite>
@@ -95,12 +95,17 @@
   <objects name="objects">
     <object>objects\controller</object>
     <object>objects\player</object>
-    <object>objects\playerAttack</object>
-    <object>objects\playerAttackClose</object>
-    <object>objects\playerAttackRanged</object>
-    <object>objects\playerAttackSuperDown</object>
-    <object>objects\playerAttackSuperUp</object>
-    <object>objects\enemy</object>
+    <objects name="Attacks">
+      <object>objects\playerAttack</object>
+      <object>objects\playerAttackClose</object>
+      <object>objects\playerAttackRanged</object>
+      <object>objects\playerAttackSuperUp</object>
+      <object>objects\playerAttackSuperDown</object>
+    </objects>
+    <objects name="Enemies">
+      <object>objects\enemy</object>
+      <object>objects\enemyJump</object>
+    </objects>
     <objects name="StandaloneEffects">
       <object>objects\sparkPop</object>
       <object>objects\swordStreak</object>

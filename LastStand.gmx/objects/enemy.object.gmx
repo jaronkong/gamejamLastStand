@@ -108,12 +108,15 @@ heightSpeed = 0;
 sprite_index = enemy_move_spr;
 image_speed = 0.05;
 
-if ( stun &lt; 0 ) {
+if ( ( stun &lt; 0 ) &amp;&amp; ( height &lt;= 0 ) ){
     if ( instance_exists( player ) ) {
         image_xscale = ( abs( image_xscale ) * sign( x - player.x ) );
     }
-} else {
+} else if ( stun &gt;= 0 ) {
     sprite_index = enemy_hit_spr;
+    image_speed = 0;
+} else if ( height &gt; 0 ) {
+    sprite_index = enemy_jump_spr;
     image_speed = 0;
 }
 </string>
@@ -208,9 +211,9 @@ var tDiff = ( lerp( knock, 0, 0.1 ) - knock );
 if ( height &lt;= 0 ) knock += tDiff;
 x -= tDiff;
 
-if ( ( abs( knock ) &gt; 1 ) || ( height &gt; 0 ) ) {
+if ( ( abs( knock ) &gt; 1 ) ) {
     stun = max( stun, 0 );
-} else {
+} else if ( height &lt;= 0 ) {
     stun -= ( 1 / room_speed );
 }
 </string>
@@ -263,7 +266,7 @@ with ( enemy ) {
             <kind>1</kind>
             <string>///Move towards the player
 
-if ( instance_exists( player ) &amp;&amp; ( stun &lt; 0 ) ) {
+if ( instance_exists( player ) &amp;&amp; ( stun &lt; 0 ) &amp;&amp; ( height &lt;= 0 ) ) {
     y = lerp( y, player.y, 0.01 );
     if ( abs( x - player.x ) &gt; 48 ) {
         x += ( 1.5 * sign( player.x - x ) );
@@ -293,7 +296,7 @@ if ( instance_exists( player ) &amp;&amp; ( stun &lt; 0 ) ) {
 
 var tFight = false;
 
-if ( instance_exists( player ) &amp;&amp; ( stun &lt; 0 ) ) {
+if ( instance_exists( player ) &amp;&amp; ( stun &lt; 0 ) &amp;&amp; ( height &lt;= 0 ) ) {
     if ( abs( x - player.x ) &lt; 64 ) {
         tFight = true;
     }

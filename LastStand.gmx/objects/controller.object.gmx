@@ -157,7 +157,7 @@ shake = lerp( shake, 0, 0.1 );
             <string>///Spawn enemies
 
 if ( random( 1 ) &lt; 0.005 ) {
-    instance_create( choose( 0, room_width ), floorHeight, enemy );
+    instance_create( choose( 0, room_width ), floorHeight, choose( enemy, enemyJump ) );
 }
 </string>
           </argument>
