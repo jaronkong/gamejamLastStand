@@ -79,6 +79,8 @@ knock = 0;
             <kind>1</kind>
             <string>///Set vertical state
 
+jumping = false;
+
 height = 0;
 heightSpeed = 0;
 </string>
@@ -112,11 +114,11 @@ if ( ( stun &lt; 0 ) &amp;&amp; ( height &lt;= 0 ) ){
     if ( instance_exists( player ) ) {
         image_xscale = ( abs( image_xscale ) * sign( x - player.x ) );
     }
+} else if ( jumping ) {
+    sprite_index = enemy_jump_spr;
+    image_speed = 0;
 } else if ( stun &gt;= 0 ) {
     sprite_index = enemy_hit_spr;
-    image_speed = 0;
-} else if ( height &gt; 0 ) {
-    sprite_index = enemy_jump_spr;
     image_speed = 0;
 }
 </string>
@@ -182,8 +184,12 @@ if ( height &lt; 0 ) {
     if ( heightSpeed &lt; -5 ) {
         shakeScreen( 6 );
     }
+    if ( jumping ) {
+        knock = 0;
+    }
     height = 0;
     heightSpeed = 0;
+    jumping = false;
 }
 </string>
           </argument>

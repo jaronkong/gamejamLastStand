@@ -135,7 +135,9 @@ image_yscale = 0.1;
 
 speedY += ( 3000 / room_speed );
 
-if ( y &gt; controller.floorHeight ) instance_destroy( );
+if ( y &gt; controller.floorHeight ) {
+    if ( random( 1 ) &lt; 0.05 ) instance_destroy( );
+}
 </string>
           </argument>
         </arguments>
