@@ -45,6 +45,7 @@
       <sprite>sprites\particle_square_spr</sprite>
     </sprites>
     <sprite>sprites\smokeNormal_spr</sprite>
+    <sprite>sprites\towers_spr</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background_bg</background>
@@ -127,6 +128,7 @@
     </objects>
     <object>objects\enemyDebris</object>
     <object>objects\titleController</object>
+    <object>objects\backgroundController</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\Title_rm</room>
