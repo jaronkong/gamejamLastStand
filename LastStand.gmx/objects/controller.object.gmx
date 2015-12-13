@@ -125,6 +125,35 @@ instance_create( room_width/2, floorHeight, player );
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Enemy spawning
+
+spawnTimer = room_speed * 1;
+enemySpawnRate = room_speed * 3;
+enemyRandomRate = room_speed * 2;
+
+levelTime = room_speed * 10;
+levelTimer = levelTime;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="2">
       <action>
@@ -230,9 +259,27 @@ shake = lerp( shake, 0, 0.1 );
             <kind>1</kind>
             <string>///Spawn enemies
 
-if ( random( 1 ) &lt; 0.005 ) {
+spawnTimer --;
+if ( spawnTimer &lt;= 0 ) {
+    spawnTimer = enemySpawnRate + random( enemyRandomRate );
     instance_create( choose( 0, room_width ), floorHeight, choose( enemy, enemyJump ) );
 }
+
+levelTimer --;
+
+if ( levelTimer &lt;= 0 ) {
+    levelTimer = levelTime;
+    enemySpawnRate -= room_speed * 0.25;
+    enemyRandomRate -= room_speed * 0.25;
+    
+    if ( enemySpawnRate &lt; room_speed * 1 ) {
+        enemySpawnRate = room_speed * 1;
+    }
+    if ( enemyRandomRate &lt; 0 ) {
+        enemyRandomRate = 1;
+    }
+}
+
 </string>
           </argument>
         </arguments>
