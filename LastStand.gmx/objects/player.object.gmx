@@ -166,6 +166,9 @@ var tDiff = ( lerp( movement, 0, 0.125 ) - movement );
 movement += tDiff;
 x -= tDiff;
 y = controller.floorHeight;
+
+var tMargin = 192;
+x = clamp( x, tMargin, room_width-tMargin );
 </string>
           </argument>
         </arguments>
